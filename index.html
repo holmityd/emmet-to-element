@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EmmetToElements Demo</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+</head>
+
+<body>
+    <script type="module">
+        import { emmetToElements, simplifiedEmmetToElement } from './index.js';
+
+        // simple button example
+        document.body.appendChild(simplifiedEmmetToElement(`
+            button#submit[data-type="button" data-id="submit"]
+                .absolute
+                .top-1/2
+                .left-1/2
+                .transform
+                .-translate-x-1/2
+                .-translate-y-1/2
+                .bg-green-500
+                .text-white
+                .px-4
+                .py-1
+                .rounded
+                    {Demo button}
+        `));
+
+        // dom
+        document.body.appendChild(emmetToElements("section#main>(header.p-2.bg-gray-200>h1{EmmetToElements Demo}+#content.p-2)")[0]);
+
+        // menu
+        document.getElementById('content').appendChild(emmetToElements(`
+            .w-56
+            .origin-top-right
+            .divide-y
+            .divide-gray-100
+            .rounded-md
+            .bg-white
+            .shadow-lg
+            .ring-1
+            .ring-black
+            .ring-opacity-5
+            .focus:outline-none
+            .transform
+            .opacity-100
+            .scale-100
+            [
+                aria-labelledby="headlessui-menu-button-:R6:"
+                role="menu"
+                tabindex="0"
+                data-headlessui-state="open"
+            ]
+            >.px-1.py-1
+                >(
+                    button
+                    .text-gray-900
+                    .group
+                    .flex
+                    .w-full
+                    .items-center
+                    .rounded-md
+                    .px-2
+                    .py-2
+                    .text-sm
+                    [
+                        role="menuitem"
+                        tabindex="-1"
+                        data-headlessui-state=""
+                    ]
+                        {Edit}
+                    +
+                    button
+                    .text-gray-900
+                    .group
+                    .flex
+                    .w-full
+                    .items-center
+                    .rounded-md
+                    .px-2
+                    .py-2
+                    .text-sm
+                    [
+                        role="menuitem"
+                        tabindex="-1"
+                        data-headlessui-state=""
+                    ]
+                        {Duplicate}
+                )
+        `)[0]);
+    </script>
+</body>
+
+</html>
