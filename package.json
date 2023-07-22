@@ -3,11 +3,12 @@
   "version": "1.0.1",
   "description": "JavaScript library for converting Emmet-like syntax to HTMLElements.",
   "main": "index.js",
+  "types": "index.d.ts",
+  "type": "module",
   "scripts": {
     "start": "lite-server"
   },
   "keywords": [],
-  "type":"module",
   "author": "Nicat Bayramov",
   "license": "MIT",
   "devDependencies": {
