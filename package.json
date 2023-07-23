@@ -8,7 +8,27 @@
   "scripts": {
     "start": "lite-server"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holmityd/emmet-to-element"
+  },
+  "keywords": [
+    "emmet",
+    "html",
+    "elements",
+    "javascript",
+    "library",
+    "DOM",
+    "web development",
+    "frontend",
+    "web design",
+    "templating",
+    "html generation",
+    "emmet to html",
+    "element creation",
+    "html elements",
+    "markup generation"
+  ],
   "author": "Nicat Bayramov",
   "license": "MIT",
   "devDependencies": {
