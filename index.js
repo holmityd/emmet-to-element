@@ -99,7 +99,6 @@ function emmetToElements(emmetString) {
    */
   const createParental = (emmetString) => {
     const components = emmetString.split(">").map((i) => i.trim());
-    console.log(components)
     const firstComponent = components.shift();
     if (!firstComponent) {
       throw new Error("Invalid Emmet string provided");
@@ -131,7 +130,6 @@ function emmetToElements(emmetString) {
 
   emmetString = emmetString.replace(/[\t\n\r]/g, "").replace(/\s+/g, " ");
   const { dataString, dividedSections } = splitEmmetIntoSections(emmetString); // split sections
-  // console.log(dataString, dividedSections);
   const elements = createParalel(dataString);
   return elements;
 }
